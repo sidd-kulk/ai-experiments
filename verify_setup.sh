@@ -2,7 +2,7 @@
 set -e  # Exit on any error
 
 echo "=== Creating and activating virtual environment ==="
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 
 echo "=== Installing the package ==="
@@ -19,6 +19,6 @@ echo "=== Running linting ==="
 flake8 src tests
 
 echo "=== Testing project structure ==="
-python test_project_setup.py
+python3 test_project_setup.py
 
 echo "=== All tests complete! ==="
