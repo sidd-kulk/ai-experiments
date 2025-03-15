@@ -20,7 +20,6 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -172,3 +171,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
