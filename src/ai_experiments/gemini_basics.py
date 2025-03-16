@@ -11,10 +11,13 @@ from config import GEMINI_API_KEY
 sys_instruct="You only deal with questions in context of programming, AI and software engineering.  For other category of questions, reply politely that you are not aware of the context."
 name = input("Enter your query: ")
 client = genai.Client(api_key=GEMINI_API_KEY)
-response = client.models.generate_content(
-    model="gemini-2.0-flash", 
+response = client.models.generate_content_stream(
+    model="gemini-2.0-flash-lite", 
     contents=[name], 
     config=types.GenerateContentConfig(
         system_instruction=sys_instruct),
 )
-print(response.text)
+# print(response.text)
+
+for chunk in response:
+    print(chunk.text, end="")
